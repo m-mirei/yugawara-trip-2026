@@ -344,6 +344,26 @@
         font-weight: 700;
         margin-bottom: 6px;
       }
+      .spot-name a,
+      .g-name a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px dashed var(--accent);
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .spot-name a:hover,
+      .g-name a:hover {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+      }
+      .spot-name a::after,
+      .g-name a::after {
+        content: " ↗";
+        font-size: 0.7em;
+        opacity: 0.5;
+      }
       .spot-tags {
         display: flex;
         gap: 6px;
@@ -883,7 +903,14 @@
         <h2>登場スポット一覧</h2>
         <div class="spot-list">
           <div class="spot-card">
-            <div class="spot-name">万葉公園</div>
+            <div class="spot-name">
+              <a
+                href="https://www.yugawara.or.jp/sightseeing/722/"
+                target="_blank"
+                rel="noopener"
+                >万葉公園</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">公園</span
               ><span class="spot-tag">足湯</span
@@ -895,7 +922,11 @@
             </div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">流甘味 むろさだ</div>
+            <div class="spot-name">
+              <a href="https://murosada.com/" target="_blank" rel="noopener"
+                >流甘味 むろさだ</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">甘味処</span
               ><span class="spot-tag">SNS映え</span>
@@ -904,7 +935,14 @@
             <div class="spot-note">水路で注文品が流れてくるユニークな体験</div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">不動滝</div>
+            <div class="spot-name">
+              <a
+                href="https://www.yugawara.or.jp/sightseeing/646/"
+                target="_blank"
+                rel="noopener"
+                >不動滝</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">自然</span
               ><span class="spot-tag">パワスポ</span>
@@ -913,7 +951,14 @@
             <div class="spot-note">落差15mの迫力。出世不動尊・出世大黒尊</div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">湯河原美術館 &amp; and garden cafe</div>
+            <div class="spot-name">
+              <a
+                href="https://www.town.yugawara.kanagawa.jp/site/museum/"
+                target="_blank"
+                rel="noopener"
+                >湯河原美術館 &amp; and garden cafe</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">美術館</span
               ><span class="spot-tag">庭園カフェ</span>
@@ -924,7 +969,14 @@
             <div class="spot-note">足湯テラス席あり。豆腐スイーツが美味</div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">ちぼりスイーツファクトリー</div>
+            <div class="spot-name">
+              <a
+                href="https://www.tivoli-factory.com/"
+                target="_blank"
+                rel="noopener"
+                >ちぼりスイーツファクトリー</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">スイーツ</span
               ><span class="spot-tag">お土産</span>
@@ -935,7 +987,14 @@
             </div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">飯田商店</div>
+            <div class="spot-name">
+              <a
+                href="https://r.iidashouten.com/"
+                target="_blank"
+                rel="noopener"
+                >飯田商店</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">ラーメン</span
               ><span class="spot-tag">要予約</span>
@@ -946,7 +1005,14 @@
             </div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">城願寺</div>
+            <div class="spot-name">
+              <a
+                href="https://mannen-joganji.jp/"
+                target="_blank"
+                rel="noopener"
+                >城願寺</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">神社仏閣</span
               ><span class="spot-tag">パワスポ</span>
@@ -957,7 +1023,14 @@
             </div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">三ツ石海岸（真鶴）</div>
+            <div class="spot-name">
+              <a
+                href="https://www.town.manazuru.kanagawa.jp/soshiki/sangyoukankou/kanko/423.html"
+                target="_blank"
+                rel="noopener"
+                >三ツ石海岸（真鶴）</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">絶景</span><span class="spot-tag">海</span>
             </div>
@@ -965,7 +1038,14 @@
             <div class="spot-note">かながわ景勝50選。相模湾パノラマビュー</div>
           </div>
           <div class="spot-card">
-            <div class="spot-name">自然薯処 麦とろ童子</div>
+            <div class="spot-name">
+              <a
+                href="https://www.hotpepper.jp/strJ000972494/"
+                target="_blank"
+                rel="noopener"
+                >自然薯処 麦とろ童子</a
+              >
+            </div>
             <div class="spot-tags">
               <span class="spot-tag">和食</span
               ><span class="spot-tag">ヘルシー</span>
@@ -1039,7 +1119,14 @@
           </div>
           <div class="genre-grid">
             <div class="genre-card color-gourmet">
-              <div class="g-name">飯田商店</div>
+              <div class="g-name">
+                <a
+                  href="https://r.iidashouten.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >飯田商店</a
+                >
+              </div>
               <div class="g-sub">ラーメン</div>
               <div class="g-access">湯河原駅から徒歩圏内 ｜ 要予約</div>
               <div class="g-desc">
@@ -1047,7 +1134,14 @@
               </div>
             </div>
             <div class="genre-card color-gourmet">
-              <div class="g-name">エルルカン・ビス</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/gourmet/1310/"
+                  target="_blank"
+                  rel="noopener"
+                  >エルルカン・ビス</a
+                >
+              </div>
               <div class="g-sub">フレンチ</div>
               <div class="g-access">湯河原駅から車で約15分</div>
               <div class="g-desc">
@@ -1055,7 +1149,14 @@
               </div>
             </div>
             <div class="genre-card color-gourmet">
-              <div class="g-name">西洋料理箱 魯風人</div>
+              <div class="g-name">
+                <a
+                  href="https://www.hotpepper.jp/strJ000728034/"
+                  target="_blank"
+                  rel="noopener"
+                  >西洋料理箱 魯風人</a
+                >
+              </div>
               <div class="g-sub">洋食</div>
               <div class="g-access">湯河原駅から車で5〜7分</div>
               <div class="g-desc">
@@ -1063,7 +1164,14 @@
               </div>
             </div>
             <div class="genre-card color-gourmet">
-              <div class="g-name">自然薯処 麦とろ童子</div>
+              <div class="g-name">
+                <a
+                  href="https://www.hotpepper.jp/strJ000972494/"
+                  target="_blank"
+                  rel="noopener"
+                  >自然薯処 麦とろ童子</a
+                >
+              </div>
               <div class="g-sub">和食</div>
               <div class="g-access">湯河原駅から車で約6分</div>
               <div class="g-desc">
@@ -1071,7 +1179,11 @@
               </div>
             </div>
             <div class="genre-card color-gourmet">
-              <div class="g-name">十二庵</div>
+              <div class="g-name">
+                <a href="https://12an.jp/" target="_blank" rel="noopener"
+                  >十二庵</a
+                >
+              </div>
               <div class="g-sub">豆腐料理</div>
               <div class="g-access">湯河原駅から徒歩圏内</div>
               <div class="g-desc">
@@ -1088,7 +1200,11 @@
           </div>
           <div class="genre-grid">
             <div class="genre-card color-cafe">
-              <div class="g-name">流甘味 むろさだ</div>
+              <div class="g-name">
+                <a href="https://murosada.com/" target="_blank" rel="noopener"
+                  >流甘味 むろさだ</a
+                >
+              </div>
               <div class="g-sub">甘味処 ｜ SNS映え</div>
               <div class="g-access">万葉公園の目の前</div>
               <div class="g-desc">
@@ -1096,7 +1212,14 @@
               </div>
             </div>
             <div class="genre-card color-cafe">
-              <div class="g-name">ちぼり湯河原スイーツファクトリー</div>
+              <div class="g-name">
+                <a
+                  href="https://www.tivoli-factory.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >ちぼり湯河原スイーツファクトリー</a
+                >
+              </div>
               <div class="g-sub">スイーツ ｜ お土産</div>
               <div class="g-access">湯河原駅から徒歩3分</div>
               <div class="g-desc">
@@ -1104,7 +1227,14 @@
               </div>
             </div>
             <div class="genre-card color-cafe">
-              <div class="g-name">and garden museum cafe</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/gourmet/421/"
+                  target="_blank"
+                  rel="noopener"
+                  >and garden museum cafe</a
+                >
+              </div>
               <div class="g-sub">ミュージアムカフェ</div>
               <div class="g-access">バス「美術館前」下車すぐ</div>
               <div class="g-desc">
@@ -1112,7 +1242,14 @@
               </div>
             </div>
             <div class="genre-card color-cafe">
-              <div class="g-name">WAKAFE（ワカフェ）</div>
+              <div class="g-name">
+                <a
+                  href="https://sites.google.com/view/wakafe4302/"
+                  target="_blank"
+                  rel="noopener"
+                  >WAKAFE（ワカフェ）</a
+                >
+              </div>
               <div class="g-sub">ギャラリーカフェ</div>
               <div class="g-access">湯河原駅から徒歩4分</div>
               <div class="g-desc">
@@ -1120,7 +1257,14 @@
               </div>
             </div>
             <div class="genre-card color-cafe">
-              <div class="g-name">カフェ サンポ</div>
+              <div class="g-name">
+                <a
+                  href="https://cafesampo.amebaownd.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >カフェ サンポ</a
+                >
+              </div>
               <div class="g-sub">隠れ家カフェ</div>
               <div class="g-access">湯河原駅から徒歩約10分</div>
               <div class="g-desc">
@@ -1137,7 +1281,14 @@
           </div>
           <div class="genre-grid">
             <div class="genre-card color-nature">
-              <div class="g-name">万葉公園</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/sightseeing/722/"
+                  target="_blank"
+                  rel="noopener"
+                  >万葉公園</a
+                >
+              </div>
               <div class="g-sub">公園 ｜ 足湯 ｜ カフェ</div>
               <div class="g-access">バス約7分「落合橋」下車</div>
               <div class="g-desc">
@@ -1145,7 +1296,14 @@
               </div>
             </div>
             <div class="genre-card color-nature">
-              <div class="g-name">不動滝</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/sightseeing/646/"
+                  target="_blank"
+                  rel="noopener"
+                  >不動滝</a
+                >
+              </div>
               <div class="g-sub">滝 ｜ パワースポット</div>
               <div class="g-access">バス約15分「不動滝」下車</div>
               <div class="g-desc">
@@ -1153,7 +1311,14 @@
               </div>
             </div>
             <div class="genre-card color-nature">
-              <div class="g-name">三ツ石海岸（真鶴）</div>
+              <div class="g-name">
+                <a
+                  href="https://www.town.manazuru.kanagawa.jp/soshiki/sangyoukankou/kanko/423.html"
+                  target="_blank"
+                  rel="noopener"
+                  >三ツ石海岸（真鶴）</a
+                >
+              </div>
               <div class="g-sub">海 ｜ 絶景</div>
               <div class="g-access">真鶴駅からバス約13分</div>
               <div class="g-desc">
@@ -1161,7 +1326,14 @@
               </div>
             </div>
             <div class="genre-card color-nature">
-              <div class="g-name">城山ハイキングコース</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/hiking/1019/"
+                  target="_blank"
+                  rel="noopener"
+                  >城山ハイキングコース</a
+                >
+              </div>
               <div class="g-sub">ハイキング ｜ 眺望</div>
               <div class="g-access">湯河原駅から徒歩でアクセス可</div>
               <div class="g-desc">
@@ -1169,7 +1341,14 @@
               </div>
             </div>
             <div class="genre-card color-nature">
-              <div class="g-name">池峯もみじの郷</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/sightseeing/883/"
+                  target="_blank"
+                  rel="noopener"
+                  >池峯もみじの郷</a
+                >
+              </div>
               <div class="g-sub">自然散策</div>
               <div class="g-access">奥湯河原エリア</div>
               <div class="g-desc">
@@ -1187,7 +1366,11 @@
           </div>
           <div class="genre-grid">
             <div class="genre-card color-power">
-              <div class="g-name">五所神社</div>
+              <div class="g-name">
+                <a href="https://goshojinjya.jp/" target="_blank" rel="noopener"
+                  >五所神社</a
+                >
+              </div>
               <div class="g-sub">神社 ｜ 御朱印あり</div>
               <div class="g-access">湯河原駅からバス約5分</div>
               <div class="g-desc">
@@ -1195,7 +1378,14 @@
               </div>
             </div>
             <div class="genre-card color-power">
-              <div class="g-name">城願寺</div>
+              <div class="g-name">
+                <a
+                  href="https://mannen-joganji.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >城願寺</a
+                >
+              </div>
               <div class="g-sub">寺院 ｜ 天然記念物</div>
               <div class="g-access">湯河原駅から徒歩10分</div>
               <div class="g-desc">
@@ -1203,7 +1393,14 @@
               </div>
             </div>
             <div class="genre-card color-power">
-              <div class="g-name">伊豆山神社（熱海）</div>
+              <div class="g-name">
+                <a
+                  href="https://izusanjinjya.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >伊豆山神社（熱海）</a
+                >
+              </div>
               <div class="g-sub">縁結び ｜ 絶景</div>
               <div class="g-access">宿から約3km（バス/タクシー）</div>
               <div class="g-desc">
@@ -1211,7 +1408,14 @@
               </div>
             </div>
             <div class="genre-card color-power">
-              <div class="g-name">福泉寺（首大仏）</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/sightseeing/4698/"
+                  target="_blank"
+                  rel="noopener"
+                  >福泉寺（首大仏）</a
+                >
+              </div>
               <div class="g-sub">寺院 ｜ 珍スポット</div>
               <div class="g-access">湯河原エリア</div>
               <div class="g-desc">
@@ -1219,7 +1423,14 @@
               </div>
             </div>
             <div class="genre-card color-power">
-              <div class="g-name">出世不動尊（不動滝内）</div>
+              <div class="g-name">
+                <a
+                  href="https://www.yugawara.or.jp/sightseeing/646/"
+                  target="_blank"
+                  rel="noopener"
+                  >出世不動尊（不動滝内）</a
+                >
+              </div>
               <div class="g-sub">パワースポット</div>
               <div class="g-access">バス約15分「不動滝」下車</div>
               <div class="g-desc">
@@ -1236,7 +1447,14 @@
           </div>
           <div class="genre-grid">
             <div class="genre-card color-activity">
-              <div class="g-name">do陶芸館</div>
+              <div class="g-name">
+                <a
+                  href="https://www.do-tougeikan.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >do陶芸館</a
+                >
+              </div>
               <div class="g-sub">陶芸体験</div>
               <div class="g-access">湯河原エリア</div>
               <div class="g-desc">
@@ -1244,7 +1462,14 @@
               </div>
             </div>
             <div class="genre-card color-activity">
-              <div class="g-name">ちぼり湯河原スイーツファクトリー</div>
+              <div class="g-name">
+                <a
+                  href="https://www.tivoli-factory.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >ちぼり湯河原スイーツファクトリー</a
+                >
+              </div>
               <div class="g-sub">工場見学 ｜ お土産</div>
               <div class="g-access">湯河原駅から徒歩3分</div>
               <div class="g-desc">
@@ -1252,7 +1477,14 @@
               </div>
             </div>
             <div class="genre-card color-activity">
-              <div class="g-name">ゑふや本店</div>
+              <div class="g-name">
+                <a
+                  href="https://www.efuya-honten.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >ゑふや本店</a
+                >
+              </div>
               <div class="g-sub">温泉まんじゅう ｜ お土産</div>
               <div class="g-access">湯河原温泉街</div>
               <div class="g-desc">
@@ -1260,7 +1492,11 @@
               </div>
             </div>
             <div class="genre-card color-activity">
-              <div class="g-name">きびもち・羊かん（小梅堂）</div>
+              <div class="g-name">
+                <a href="https://koumedo.jp/" target="_blank" rel="noopener"
+                  >きびもち・羊かん（小梅堂）</a
+                >
+              </div>
               <div class="g-sub">和菓子 ｜ お土産</div>
               <div class="g-access">湯河原温泉街</div>
               <div class="g-desc">
