@@ -1,0 +1,1330 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>湯河原女子旅 2026.4.29-30</title>
+    <style>
+      :root {
+        --primary: #7c6d8e;
+        --primary-light: #f3eff7;
+        --accent: #d4a373;
+        --accent-light: #fef5ed;
+        --text: #3a3a3a;
+        --text-light: #6b6b6b;
+        --bg: #fafaf8;
+        --card-bg: #ffffff;
+        --border: #e8e4ec;
+        --tag-a: #8b7fb8;
+        --tag-b: #5a9e6f;
+        --tag-c: #c97b84;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.8;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ヒーローセクション */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #7c6d8e 0%,
+          #a89cc8 50%,
+          #d4a373 100%
+        );
+        color: #fff;
+        text-align: center;
+        padding: 60px 20px 50px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+      .hero .subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        font-weight: 400;
+      }
+      .hero .date-badge {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 8px 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        font-size: 0.95rem;
+        backdrop-filter: blur(4px);
+      }
+
+      /* コンテナ */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* 旅行概要セクション */
+      .overview {
+        margin: -30px auto 40px;
+        position: relative;
+        z-index: 2;
+      }
+      .overview-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 28px 32px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+      .overview-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .overview-icon {
+        font-size: 1.4rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .overview-label {
+        font-size: 0.75rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .overview-value {
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      /* パターン選択タブ */
+      .pattern-tabs {
+        display: flex;
+        gap: 8px;
+        margin: 40px 0 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .pattern-tab {
+        padding: 12px 24px;
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        background: var(--card-bg);
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+        min-width: 200px;
+      }
+      .pattern-tab:hover {
+        border-color: var(--primary);
+      }
+      .pattern-tab.active {
+        border-color: var(--primary);
+        background: var(--primary-light);
+        color: var(--primary);
+      }
+      .pattern-tab .tab-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
+      .pattern-tab.active .tab-label {
+        color: var(--primary);
+      }
+
+      /* パターンコンテンツ */
+      .pattern-content {
+        display: none;
+      }
+      .pattern-content.active {
+        display: block;
+      }
+
+      .pattern-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .pattern-header h2 {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+      .pattern-header .pattern-desc {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      /* 日付セクション */
+      .day-section {
+        margin-bottom: 36px;
+      }
+      .day-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--border);
+      }
+      .day-badge {
+        background: var(--primary);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .day-date {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      /* タイムラインアイテム */
+      .timeline {
+        position: relative;
+        padding-left: 28px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: var(--border);
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 20px;
+        padding: 16px 20px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        border-left: 3px solid var(--accent);
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -25px;
+        top: 22px;
+        width: 10px;
+        height: 10px;
+        background: var(--accent);
+        border-radius: 50%;
+        border: 2px solid var(--card-bg);
+      }
+      .timeline-item.hotel {
+        border-left-color: var(--primary);
+        background: var(--primary-light);
+      }
+      .timeline-item.hotel::before {
+        background: var(--primary);
+      }
+      .timeline-time {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+      .timeline-item.hotel .timeline-time {
+        color: var(--primary);
+      }
+      .timeline-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .timeline-desc {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* 注意点セクション */
+      .tips-section {
+        margin: 48px 0 40px;
+      }
+      .tips-section h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 24px;
+        color: var(--primary);
+      }
+      .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+      .tip-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .tip-card.important {
+        border: 2px solid #e8b4b8;
+        background: #fef8f8;
+      }
+      .tip-icon {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+      .tip-title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .tip-text {
+        font-size: 0.82rem;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* スポット一覧セクション */
+      .spots-section {
+        margin: 48px 0;
+      }
+      .spots-section h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 24px;
+        color: var(--primary);
+      }
+      .spot-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .spot-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s;
+      }
+      .spot-card:hover {
+        transform: translateY(-2px);
+      }
+      .spot-name {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .spot-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .spot-tag {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .spot-access {
+        font-size: 0.78rem;
+        color: var(--text-light);
+      }
+      .spot-note {
+        font-size: 0.82rem;
+        margin-top: 6px;
+        color: var(--text);
+      }
+
+      /* フッター */
+      .footer {
+        text-align: center;
+        padding: 32px 20px;
+        color: var(--text-light);
+        font-size: 0.8rem;
+        border-top: 1px solid var(--border);
+        margin-top: 40px;
+      }
+
+      /* ジャンル別セクション */
+      .genre-section {
+        margin: 48px 0;
+      }
+      .genre-section > h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 28px;
+        color: var(--primary);
+      }
+      .genre-block {
+        margin-bottom: 36px;
+      }
+      .genre-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--border);
+        color: var(--text);
+      }
+      .genre-icon {
+        font-size: 1.3rem;
+      }
+      .genre-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 14px;
+      }
+      .genre-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s;
+        border-top: 3px solid var(--accent);
+      }
+      .genre-card:hover {
+        transform: translateY(-2px);
+      }
+      .genre-card .g-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .genre-card .g-sub {
+        font-size: 0.75rem;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .genre-card .g-access {
+        font-size: 0.78rem;
+        color: var(--text-light);
+        margin-bottom: 4px;
+      }
+      .genre-card .g-desc {
+        font-size: 0.82rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .genre-card.color-gourmet {
+        border-top-color: #e07b5a;
+      }
+      .genre-card.color-cafe {
+        border-top-color: #c9956b;
+      }
+      .genre-card.color-nature {
+        border-top-color: #5a9e6f;
+      }
+      .genre-card.color-power {
+        border-top-color: #8b7fb8;
+      }
+      .genre-card.color-activity {
+        border-top-color: #c97b84;
+      }
+
+      /* レスポンシブ */
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+        .overview-card {
+          grid-template-columns: 1fr 1fr;
+          padding: 20px;
+        }
+        .pattern-tab {
+          min-width: 0;
+          flex: 1;
+          padding: 10px 12px;
+          font-size: 0.82rem;
+        }
+        .timeline {
+          padding-left: 24px;
+        }
+        .tips-grid {
+          grid-template-columns: 1fr;
+        }
+        .spot-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヒーロー -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>湯河原 女子旅</h1>
+        <p class="subtitle">テニスサークル同窓旅行</p>
+        <span class="date-badge">2026年 4月29日(水祝) - 30日(木)</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- 旅行概要 -->
+      <section class="overview">
+        <div class="overview-card">
+          <div class="overview-item">
+            <span class="overview-icon">&#x1F4C5;</span>
+            <div>
+              <div class="overview-label">日程</div>
+              <div class="overview-value">4/29(水祝) - 30(木)</div>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span class="overview-icon">&#x1F465;</span>
+            <div>
+              <div class="overview-label">メンバー</div>
+              <div class="overview-value">6-7名（40代〜50代）</div>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span class="overview-icon">&#x1F3E8;</span>
+            <div>
+              <div class="overview-label">宿泊</div>
+              <div class="overview-value">ニューウェルシティ湯河原</div>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span class="overview-icon">&#x1F682;</span>
+            <div>
+              <div class="overview-label">移動</div>
+              <div class="overview-value">電車 + バス / タクシー</div>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span class="overview-icon">&#x1F35C;</span>
+            <div>
+              <div class="overview-label">食事</div>
+              <div class="overview-value">1日目夕食付 / 2日目朝食付</div>
+            </div>
+          </div>
+          <div class="overview-item">
+            <span class="overview-icon">&#x2668;&#xFE0F;</span>
+            <div>
+              <div class="overview-label">温泉</div>
+              <div class="overview-value">宿の大浴場でゆっくり</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- パターン選択 -->
+      <nav class="pattern-tabs">
+        <div class="pattern-tab active" onclick="showPattern('a')">
+          A. 王道まったり
+          <span class="tab-label">万葉公園 &amp; カフェ中心</span>
+        </div>
+        <div class="pattern-tab" onclick="showPattern('b')">
+          B. アクティブ満喫
+          <span class="tab-label">自然 &amp; グルメ充実</span>
+        </div>
+        <div class="pattern-tab" onclick="showPattern('c')">
+          C. 文化 &amp; スイーツ
+          <span class="tab-label">アート &amp; パワスポ</span>
+        </div>
+      </nav>
+
+      <!-- パターンA -->
+      <div id="pattern-a" class="pattern-content active">
+        <div class="pattern-header">
+          <h2>A. 王道まったりコース</h2>
+          <p class="pattern-desc">
+            のんびり・ゆったり派向け。移動距離が少なく、カフェや公園でおしゃべりする時間がたっぷり。
+          </p>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 1</span>
+            <span class="day-date">4月29日（水・祝）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">11:00</div>
+              <div class="timeline-title">JR湯河原駅 集合</div>
+              <div class="timeline-desc">
+                改札を出たら全員集合！久しぶりの再会を楽しもう
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:15</div>
+              <div class="timeline-title">ちぼり湯河原スイーツファクトリー</div>
+              <div class="timeline-desc">
+                駅から徒歩3分。クッキー8種類60分食べ放題でワイワイ！ジェラートやみかんシュークリームも。お土産購入にも最適
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:30</div>
+              <div class="timeline-title">バスで万葉公園エリアへ移動</div>
+              <div class="timeline-desc">
+                湯河原駅からバス約7分「落合橋」下車
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:45</div>
+              <div class="timeline-title">
+                流甘味 むろさだ でランチ &amp; 甘味
+              </div>
+              <div class="timeline-desc">
+                水路に乗って注文品が流れてくるユニークなスタイル！SNS映え抜群でグループで盛り上がること間違いなし
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-title">万葉公園 新緑散策</div>
+              <div class="timeline-desc">
+                4月下旬は新緑が美しい季節。玄関テラスのカフェでドリンク &amp;
+                足湯も楽しめる
+              </div>
+            </div>
+            <div class="timeline-item hotel">
+              <div class="timeline-time">15:30</div>
+              <div class="timeline-title">チェックイン &amp; 宿でゆっくり</div>
+              <div class="timeline-desc">
+                バスで宿へ移動。大浴場で温泉を満喫 → 18:00 夕食 →
+                部屋で女子トーク！
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 2</span>
+            <span class="day-date">4月30日（木）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item hotel">
+              <div class="timeline-time">7:30 - 9:30</div>
+              <div class="timeline-title">朝食 &amp; 朝風呂</div>
+              <div class="timeline-desc">宿で朝食後、時間があれば朝風呂も</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-title">チェックアウト</div>
+              <div class="timeline-desc">バスで湯河原駅方面へ</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:15</div>
+              <div class="timeline-title">城願寺 参拝</div>
+              <div class="timeline-desc">
+                駅から徒歩10分。800年以上の歴史を持つ古刹。天然記念物のビャクシン（大木）は圧巻
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:00</div>
+              <div class="timeline-title">
+                町立湯河原美術館 &amp; and garden museum cafe
+              </div>
+              <div class="timeline-desc">
+                バスで移動。湯河原ゆかりの作品鑑賞後、元旅館の庭園を眺めながら足湯付きテラスでランチ
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:00</div>
+              <div class="timeline-title">温泉街ぶらぶら散策 &amp; お土産</div>
+              <div class="timeline-desc">
+                干物屋、温泉まんじゅう、地元の美味しいものを探そう
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:00頃</div>
+              <div class="timeline-title">湯河原駅 → 帰路</div>
+              <div class="timeline-desc">お疲れさまでした！また集まろうね</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- パターンB -->
+      <div id="pattern-b" class="pattern-content">
+        <div class="pattern-header">
+          <h2>B. アクティブ満喫コース</h2>
+          <p class="pattern-desc">
+            名店グルメと自然を両方楽しむ欲張りコース。2日目に真鶴まで足を延ばして海の絶景も。
+          </p>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 1</span>
+            <span class="day-date">4月29日（水・祝）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">11:00</div>
+              <div class="timeline-title">JR湯河原駅 集合</div>
+              <div class="timeline-desc">
+                改札を出たら全員集合！タクシー2台で移動（約10分）
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:30</div>
+              <div class="timeline-title">飯田商店 で絶品らぁ麺ランチ</div>
+              <div class="timeline-desc">
+                食べログアワード受賞の全国屈指の名店。化学調味料不使用の澄んだスープは感動もの。※要予約（4/26(日)16:00受付開始・OMAKASEサイト）
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:00</div>
+              <div class="timeline-title">不動滝 散策</div>
+              <div class="timeline-desc">
+                バスで移動。落差15mの迫力ある滝でマイナスイオンを浴びよう。出世不動尊・出世大黒尊も
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-title">万葉公園 新緑散策</div>
+              <div class="timeline-desc">
+                バスで移動。新緑の遊歩道を気持ちよく散策
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">15:00</div>
+              <div class="timeline-title">玄関テラス カフェでひと休み</div>
+              <div class="timeline-desc">
+                万葉公園内のおしゃれカフェでドリンク &amp; 足湯タイム
+              </div>
+            </div>
+            <div class="timeline-item hotel">
+              <div class="timeline-time">15:30</div>
+              <div class="timeline-title">チェックイン &amp; 宿でゆっくり</div>
+              <div class="timeline-desc">
+                バスで宿へ。大浴場で温泉を満喫 → 18:00 夕食 → 部屋で女子トーク！
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 2</span>
+            <span class="day-date">4月30日（木）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item hotel">
+              <div class="timeline-time">7:30 - 9:30</div>
+              <div class="timeline-title">朝食 &amp; 朝風呂</div>
+              <div class="timeline-desc">宿で朝食後、朝風呂で旅の余韻を</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-title">チェックアウト</div>
+              <div class="timeline-desc">
+                荷物を駅のコインロッカーに預けよう
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:30</div>
+              <div class="timeline-title">JR湯河原 → 真鶴（1駅・約3分）</div>
+              <div class="timeline-desc">電車で隣駅の真鶴へプチ遠征！</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:45</div>
+              <div class="timeline-title">三ツ石海岸 &amp; ケープ真鶴</div>
+              <div class="timeline-desc">
+                バスで約13分。かながわ景勝50選の絶景！相模湾のパノラマが広がる。干潮時は三ツ石まで歩けることも
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:00</div>
+              <div class="timeline-title">真鶴港周辺で海鮮ランチ</div>
+              <div class="timeline-desc">
+                新鮮な地魚を堪能。港町ならではの海の幸を楽しもう
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:30</div>
+              <div class="timeline-title">JR真鶴駅 → 帰路</div>
+              <div class="timeline-desc">お疲れさまでした！また集まろうね</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- パターンC -->
+      <div id="pattern-c" class="pattern-content">
+        <div class="pattern-header">
+          <h2>C. 大人の文化 &amp; スイーツコース</h2>
+          <p class="pattern-desc">
+            美術館・神社・滝とカルチャー &amp;
+            パワースポットを巡る大人の女子旅。スイーツも充実。
+          </p>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 1</span>
+            <span class="day-date">4月29日（水・祝）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">11:00</div>
+              <div class="timeline-title">JR湯河原駅 集合</div>
+              <div class="timeline-desc">
+                改札を出たら全員集合！まずは駅前スイーツへ
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:10</div>
+              <div class="timeline-title">ちぼり湯河原スイーツファクトリー</div>
+              <div class="timeline-desc">
+                駅から徒歩3分。クッキー食べ放題 &amp;
+                ジェラートでスイーツ欲を満たそう
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:15</div>
+              <div class="timeline-title">町立湯河原美術館</div>
+              <div class="timeline-desc">
+                バスで移動。湯河原ゆかりの画家の作品をゆっくり鑑賞
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:00</div>
+              <div class="timeline-title">
+                and garden museum cafe で庭園ランチ
+              </div>
+              <div class="timeline-desc">
+                美術館併設カフェ。元旅館の庭園を眺めながら足湯テラス席で贅沢ランチ。豆腐スイーツも美味
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:15</div>
+              <div class="timeline-title">万葉公園 新緑散策</div>
+              <div class="timeline-desc">
+                バスで移動。新緑の中をのんびりお散歩
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">15:00</div>
+              <div class="timeline-title">流甘味 むろさだ で甘味タイム</div>
+              <div class="timeline-desc">
+                万葉公園目の前。水路で流れてくる甘味でほっこり
+              </div>
+            </div>
+            <div class="timeline-item hotel">
+              <div class="timeline-time">15:30</div>
+              <div class="timeline-title">チェックイン &amp; 宿でゆっくり</div>
+              <div class="timeline-desc">
+                バスで宿へ。大浴場で温泉を満喫 → 18:00 夕食 → 部屋で女子トーク！
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 2</span>
+            <span class="day-date">4月30日（木）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item hotel">
+              <div class="timeline-time">7:30 - 9:30</div>
+              <div class="timeline-title">朝食 &amp; 朝風呂</div>
+              <div class="timeline-desc">宿で朝食後、朝風呂でリフレッシュ</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-title">チェックアウト</div>
+              <div class="timeline-desc">バスで湯河原駅方面へ</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:15</div>
+              <div class="timeline-title">城願寺 参拝</div>
+              <div class="timeline-desc">
+                駅から徒歩10分。800年以上の歴史を持つパワースポット。土肥実平ゆかりの寺
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:45</div>
+              <div class="timeline-title">不動滝 パワースポット巡り</div>
+              <div class="timeline-desc">
+                バスで約15分。落差15mの迫力ある滝 &amp;
+                出世不動尊でパワーチャージ
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:00</div>
+              <div class="timeline-title">
+                自然薯処 麦とろ童子 でヘルシーランチ
+              </div>
+              <div class="timeline-desc">
+                古民家の座敷席で相模湾を望みながら、麦とろ &amp;
+                ローストビーフの「ビーとろ」を
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:30</div>
+              <div class="timeline-title">お土産購入 &amp; 散策</div>
+              <div class="timeline-desc">
+                温泉街でお気に入りのお土産を見つけよう
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:00頃</div>
+              <div class="timeline-title">湯河原駅 → 帰路</div>
+              <div class="timeline-desc">お疲れさまでした！また集まろうね</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- スポット一覧 -->
+      <section class="spots-section">
+        <h2>登場スポット一覧</h2>
+        <div class="spot-list">
+          <div class="spot-card">
+            <div class="spot-name">万葉公園</div>
+            <div class="spot-tags">
+              <span class="spot-tag">公園</span
+              ><span class="spot-tag">足湯</span
+              ><span class="spot-tag">カフェ</span>
+            </div>
+            <div class="spot-access">湯河原駅からバス約7分「落合橋」下車</div>
+            <div class="spot-note">
+              新緑散策 + 玄関テラスカフェ + 足湯。4月下旬は新緑が美しい
+            </div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">流甘味 むろさだ</div>
+            <div class="spot-tags">
+              <span class="spot-tag">甘味処</span
+              ><span class="spot-tag">SNS映え</span>
+            </div>
+            <div class="spot-access">万葉公園の目の前</div>
+            <div class="spot-note">水路で注文品が流れてくるユニークな体験</div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">不動滝</div>
+            <div class="spot-tags">
+              <span class="spot-tag">自然</span
+              ><span class="spot-tag">パワスポ</span>
+            </div>
+            <div class="spot-access">湯河原駅からバス約15分</div>
+            <div class="spot-note">落差15mの迫力。出世不動尊・出世大黒尊</div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">湯河原美術館 &amp; and garden cafe</div>
+            <div class="spot-tags">
+              <span class="spot-tag">美術館</span
+              ><span class="spot-tag">庭園カフェ</span>
+            </div>
+            <div class="spot-access">
+              湯河原駅からバス約11分「美術館前」下車
+            </div>
+            <div class="spot-note">足湯テラス席あり。豆腐スイーツが美味</div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">ちぼりスイーツファクトリー</div>
+            <div class="spot-tags">
+              <span class="spot-tag">スイーツ</span
+              ><span class="spot-tag">お土産</span>
+            </div>
+            <div class="spot-access">湯河原駅から徒歩3分</div>
+            <div class="spot-note">
+              クッキー8種60分食べ放題。ジェラート・シュークリームも
+            </div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">飯田商店</div>
+            <div class="spot-tags">
+              <span class="spot-tag">ラーメン</span
+              ><span class="spot-tag">要予約</span>
+            </div>
+            <div class="spot-access">湯河原駅から徒歩圏内</div>
+            <div class="spot-note">
+              食べログアワード受賞。4/26(日)16:00予約開始
+            </div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">城願寺</div>
+            <div class="spot-tags">
+              <span class="spot-tag">神社仏閣</span
+              ><span class="spot-tag">パワスポ</span>
+            </div>
+            <div class="spot-access">湯河原駅から徒歩10分</div>
+            <div class="spot-note">
+              800年超の歴史。天然記念物のビャクシンは必見
+            </div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">三ツ石海岸（真鶴）</div>
+            <div class="spot-tags">
+              <span class="spot-tag">絶景</span><span class="spot-tag">海</span>
+            </div>
+            <div class="spot-access">真鶴駅からバス約13分</div>
+            <div class="spot-note">かながわ景勝50選。相模湾パノラマビュー</div>
+          </div>
+          <div class="spot-card">
+            <div class="spot-name">自然薯処 麦とろ童子</div>
+            <div class="spot-tags">
+              <span class="spot-tag">和食</span
+              ><span class="spot-tag">ヘルシー</span>
+            </div>
+            <div class="spot-access">湯河原駅から車で約6分</div>
+            <div class="spot-note">
+              古民家座敷席。麦とろ &amp; ローストビーフの「ビーとろ」
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 注意点 -->
+      <section class="tips-section">
+        <h2>知っておくと便利な情報</h2>
+        <div class="tips-grid">
+          <div class="tip-card important">
+            <div class="tip-icon">&#x26A0;&#xFE0F;</div>
+            <div class="tip-title">飯田商店の予約（パターンBのみ）</div>
+            <div class="tip-text">
+              4/29・30は営業日。予約は<strong>4/26(日) 16:00</strong
+              >にOMAKASEサイトで受付開始。超人気のため開始直後にアクセスを！
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#x1F68C;</div>
+            <div class="tip-title">バス移動</div>
+            <div class="tip-text">
+              湯河原駅から奥湯河原行き・不動滝行きなどが主要路線。宿はJR湯河原駅から無料シャトルバスあり
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#x1F695;</div>
+            <div class="tip-title">タクシー</div>
+            <div class="tip-text">
+              6〜7名なら2台に分乗。駅前にタクシー乗り場あり。飯田商店など少し離れた場所に便利
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#x1F338;</div>
+            <div class="tip-title">GW混雑</div>
+            <div class="tip-text">
+              4/29は祝日でGW前半。人気スポットは午前中の訪問がベター
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#x1F45F;</div>
+            <div class="tip-title">服装</div>
+            <div class="tip-text">
+              不動滝・三ツ石海岸は歩きやすい靴必須。万葉公園も遊歩道あり。スニーカー推奨
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">&#x2602;&#xFE0F;</div>
+            <div class="tip-title">雨天プラン</div>
+            <div class="tip-text">
+              美術館・カフェ・スイーツファクトリー中心に切り替え可能。屋内スポットも充実しているので安心
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ジャンル別おすすめスポット -->
+      <section class="genre-section">
+        <h2>ジャンル別おすすめスポット</h2>
+
+        <!-- グルメ -->
+        <div class="genre-block">
+          <div class="genre-title">
+            <span class="genre-icon">&#x1F374;</span> グルメ・ランチ
+          </div>
+          <div class="genre-grid">
+            <div class="genre-card color-gourmet">
+              <div class="g-name">飯田商店</div>
+              <div class="g-sub">ラーメン</div>
+              <div class="g-access">湯河原駅から徒歩圏内 ｜ 要予約</div>
+              <div class="g-desc">
+                食べログアワード受賞の全国屈指の名店。化学調味料不使用の澄んだスープと自家製麺。水〜土営業
+              </div>
+            </div>
+            <div class="genre-card color-gourmet">
+              <div class="g-name">エルルカン・ビス</div>
+              <div class="g-sub">フレンチ</div>
+              <div class="g-access">湯河原駅から車で約15分</div>
+              <div class="g-desc">
+                竹林に囲まれた隠れ家フレンチ。和の技法を取り入れた繊細な料理。別荘族にも愛される名店
+              </div>
+            </div>
+            <div class="genre-card color-gourmet">
+              <div class="g-name">西洋料理箱 魯風人</div>
+              <div class="g-sub">洋食</div>
+              <div class="g-access">湯河原駅から車で5〜7分</div>
+              <div class="g-desc">
+                8時間以上煮込んだ「とろけるタンシチュー」が看板メニュー。サラダ・スープ・デザート付きランチが人気
+              </div>
+            </div>
+            <div class="genre-card color-gourmet">
+              <div class="g-name">自然薯処 麦とろ童子</div>
+              <div class="g-sub">和食</div>
+              <div class="g-access">湯河原駅から車で約6分</div>
+              <div class="g-desc">
+                古民家の全席座敷席で相模湾を望む。麦とろ&amp;黒毛和牛ローストビーフの「ビーとろ」がおすすめ
+              </div>
+            </div>
+            <div class="genre-card color-gourmet">
+              <div class="g-name">十二庵</div>
+              <div class="g-sub">豆腐料理</div>
+              <div class="g-access">湯河原駅から徒歩圏内</div>
+              <div class="g-desc">
+                毎朝手作りの豆腐料理専門店。「できたてとうふ御膳」が人気。ヘルシーで体に優しいランチ
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- カフェ・スイーツ -->
+        <div class="genre-block">
+          <div class="genre-title">
+            <span class="genre-icon">&#x2615;</span> カフェ・スイーツ
+          </div>
+          <div class="genre-grid">
+            <div class="genre-card color-cafe">
+              <div class="g-name">流甘味 むろさだ</div>
+              <div class="g-sub">甘味処 ｜ SNS映え</div>
+              <div class="g-access">万葉公園の目の前</div>
+              <div class="g-desc">
+                水路に乗って注文品が流れてくるユニークなスタイル。テラス席ありでグループに最適
+              </div>
+            </div>
+            <div class="genre-card color-cafe">
+              <div class="g-name">ちぼり湯河原スイーツファクトリー</div>
+              <div class="g-sub">スイーツ ｜ お土産</div>
+              <div class="g-access">湯河原駅から徒歩3分</div>
+              <div class="g-desc">
+                クッキー8種類60分食べ放題！湯河原みかんのジェラートやシュークリームも。菓子作り体験もあり
+              </div>
+            </div>
+            <div class="genre-card color-cafe">
+              <div class="g-name">and garden museum cafe</div>
+              <div class="g-sub">ミュージアムカフェ</div>
+              <div class="g-access">バス「美術館前」下車すぐ</div>
+              <div class="g-desc">
+                美術館併設。十二庵プロデュースの豆腐スイーツ。元旅館の庭園を眺める足湯付きテラス席が贅沢
+              </div>
+            </div>
+            <div class="genre-card color-cafe">
+              <div class="g-name">WAKAFE（ワカフェ）</div>
+              <div class="g-sub">ギャラリーカフェ</div>
+              <div class="g-access">湯河原駅から徒歩4分</div>
+              <div class="g-desc">
+                地下1階のギャラリー風おしゃれ空間。フレンチトースト、アップルパイ、ベイクドチーズケーキが人気
+              </div>
+            </div>
+            <div class="genre-card color-cafe">
+              <div class="g-name">カフェ サンポ</div>
+              <div class="g-sub">隠れ家カフェ</div>
+              <div class="g-access">湯河原駅から徒歩約10分</div>
+              <div class="g-desc">
+                倉庫をリノベした約10席の小さなカフェ。自家製スコーンやあんバターが評判の隠れ家的スポット
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 自然・景勝地 -->
+        <div class="genre-block">
+          <div class="genre-title">
+            <span class="genre-icon">&#x1F333;</span> 自然・景勝地
+          </div>
+          <div class="genre-grid">
+            <div class="genre-card color-nature">
+              <div class="g-name">万葉公園</div>
+              <div class="g-sub">公園 ｜ 足湯 ｜ カフェ</div>
+              <div class="g-access">バス約7分「落合橋」下車</div>
+              <div class="g-desc">
+                湯河原を代表する公園。4月下旬は新緑が美しい。玄関テラスのカフェ&amp;足湯、遊歩道で散策を
+              </div>
+            </div>
+            <div class="genre-card color-nature">
+              <div class="g-name">不動滝</div>
+              <div class="g-sub">滝 ｜ パワースポット</div>
+              <div class="g-access">バス約15分「不動滝」下車</div>
+              <div class="g-desc">
+                落差15mの迫力ある滝。マイナスイオンたっぷり。出世不動尊・出世大黒尊が祀られている
+              </div>
+            </div>
+            <div class="genre-card color-nature">
+              <div class="g-name">三ツ石海岸（真鶴）</div>
+              <div class="g-sub">海 ｜ 絶景</div>
+              <div class="g-access">真鶴駅からバス約13分</div>
+              <div class="g-desc">
+                かながわ景勝50選。相模湾のパノラマビュー。干潮時は三ツ石まで歩けることも。歩きやすい靴で
+              </div>
+            </div>
+            <div class="genre-card color-nature">
+              <div class="g-name">城山ハイキングコース</div>
+              <div class="g-sub">ハイキング ｜ 眺望</div>
+              <div class="g-access">湯河原駅から徒歩でアクセス可</div>
+              <div class="g-desc">
+                山頂から相模湾・伊豆半島・初島・大島を一望できる絶景コース。所要約1.5〜2時間
+              </div>
+            </div>
+            <div class="genre-card color-nature">
+              <div class="g-name">池峯もみじの郷</div>
+              <div class="g-sub">自然散策</div>
+              <div class="g-access">奥湯河原エリア</div>
+              <div class="g-desc">
+                約540本のイロハモミジが植栽。秋は紅葉の名所だが、春の新緑も清々しい。静かな散策路
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- パワースポット・寺社 -->
+        <div class="genre-block">
+          <div class="genre-title">
+            <span class="genre-icon">&#x26E9;&#xFE0F;</span>
+            パワースポット・寺社
+          </div>
+          <div class="genre-grid">
+            <div class="genre-card color-power">
+              <div class="g-name">五所神社</div>
+              <div class="g-sub">神社 ｜ 御朱印あり</div>
+              <div class="g-access">湯河原駅からバス約5分</div>
+              <div class="g-desc">
+                1300年の歴史を誇る湯河原随一のパワースポット。樹齢850年の御神木の楠は圧巻。七福神の像も
+              </div>
+            </div>
+            <div class="genre-card color-power">
+              <div class="g-name">城願寺</div>
+              <div class="g-sub">寺院 ｜ 天然記念物</div>
+              <div class="g-access">湯河原駅から徒歩10分</div>
+              <div class="g-desc">
+                800年以上の歴史を持つ古刹。土肥実平ゆかりの寺。天然記念物のビャクシン（大木）は必見
+              </div>
+            </div>
+            <div class="genre-card color-power">
+              <div class="g-name">伊豆山神社（熱海）</div>
+              <div class="g-sub">縁結び ｜ 絶景</div>
+              <div class="g-access">宿から約3km（バス/タクシー）</div>
+              <div class="g-desc">
+                縁結びの神様として有名。相模湾を見下ろす絶景。少し足を延ばしてパワーチャージ
+              </div>
+            </div>
+            <div class="genre-card color-power">
+              <div class="g-name">福泉寺（首大仏）</div>
+              <div class="g-sub">寺院 ｜ 珍スポット</div>
+              <div class="g-access">湯河原エリア</div>
+              <div class="g-desc">
+                「首大仏」で知られるユニークな寺院。首から上の願い事（学業・合格祈願）にご利益があるとされる
+              </div>
+            </div>
+            <div class="genre-card color-power">
+              <div class="g-name">出世不動尊（不動滝内）</div>
+              <div class="g-sub">パワースポット</div>
+              <div class="g-access">バス約15分「不動滝」下車</div>
+              <div class="g-desc">
+                不動滝のそばに祀られた出世不動尊と出世大黒尊。仕事運・金運アップの祈願に
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 体験・お土産 -->
+        <div class="genre-block">
+          <div class="genre-title">
+            <span class="genre-icon">&#x1F381;</span> 体験・お土産
+          </div>
+          <div class="genre-grid">
+            <div class="genre-card color-activity">
+              <div class="g-name">do陶芸館</div>
+              <div class="g-sub">陶芸体験</div>
+              <div class="g-access">湯河原エリア</div>
+              <div class="g-desc">
+                手回しろくろ体験や金箔貼り体験など多彩なコース。最大70名収容でグループに最適。当日持ち帰り可のコースも
+              </div>
+            </div>
+            <div class="genre-card color-activity">
+              <div class="g-name">ちぼり湯河原スイーツファクトリー</div>
+              <div class="g-sub">工場見学 ｜ お土産</div>
+              <div class="g-access">湯河原駅から徒歩3分</div>
+              <div class="g-desc">
+                クッキー食べ放題に加え、予約制の菓子作り体験も。限定スイーツやギフトボックスのお土産が充実
+              </div>
+            </div>
+            <div class="genre-card color-activity">
+              <div class="g-name">ゑふや本店</div>
+              <div class="g-sub">温泉まんじゅう ｜ お土産</div>
+              <div class="g-access">湯河原温泉街</div>
+              <div class="g-desc">
+                大正時代末期から変わらぬ製法の温泉まんじゅう。「かながわの名産100選」にも選出。湯河原土産の定番
+              </div>
+            </div>
+            <div class="genre-card color-activity">
+              <div class="g-name">きびもち・羊かん（小梅堂）</div>
+              <div class="g-sub">和菓子 ｜ お土産</div>
+              <div class="g-access">湯河原温泉街</div>
+              <div class="g-desc">
+                きびだんごは湯河原の看板銘菓。添加物不使用の素朴な味わい。「かながわの名産100選」認定
+              </div>
+            </div>
+            <div class="genre-card color-activity">
+              <div class="g-name">湯河原みかん関連商品</div>
+              <div class="g-sub">みかんスイーツ ｜ お土産</div>
+              <div class="g-access">各店舗で購入可</div>
+              <div class="g-desc">
+                温暖な気候で育った湯河原みかんを使ったジュース・ジャム・ジェラート・シュークリームなど多彩な商品
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      湯河原女子旅 2026 &mdash; テニスサークル同窓会
+    </footer>
+
+    <script>
+      function showPattern(id) {
+        // タブの切替
+        document.querySelectorAll(".pattern-tab").forEach(function (tab, i) {
+          tab.classList.toggle("active", ["a", "b", "c"][i] === id);
+        });
+        // コンテンツの切替
+        document
+          .querySelectorAll(".pattern-content")
+          .forEach(function (content) {
+            content.classList.toggle("active", content.id === "pattern-" + id);
+          });
+      }
+    </script>
+  </body>
+</html>
