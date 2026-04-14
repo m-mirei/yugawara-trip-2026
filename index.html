@@ -26,6 +26,10 @@
         --tag-c: #c97b84;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -274,6 +278,15 @@
         font-size: 1rem;
         font-weight: 700;
         margin-bottom: 4px;
+      }
+      .timeline-title a.spot-link {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px dashed var(--accent);
+        transition: color 0.2s;
+      }
+      .timeline-title a.spot-link:hover {
+        color: var(--primary);
       }
       .timeline-desc {
         font-size: 0.85rem;
@@ -600,7 +613,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:15</div>
               <div class="timeline-title">
-                湯河原カフェ で到着コーヒー
+                <a class="spot-link" href="#spot-yugawaracafe">湯河原カフェ</a> で到着コーヒー
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -610,7 +623,7 @@
             </div>
             <div class="timeline-item">
               <div class="timeline-time">11:45</div>
-              <div class="timeline-title">ちぼり湯河原スイーツファクトリー</div>
+              <div class="timeline-title"><a class="spot-link" href="#spot-tivoli">ちぼり湯河原スイーツファクトリー</a></div>
               <div class="timeline-desc">
                 駅から徒歩3分。クッキー8種類60分食べ放題でワイワイ！ジェラートやみかんシュークリームも。お土産購入にも最適
               </div>
@@ -618,7 +631,7 @@
             <div class="timeline-item">
               <div class="timeline-time">12:45</div>
               <div class="timeline-title">
-                バスで万葉公園エリアへ → 流甘味 むろさだ でランチ
+                バスで<a class="spot-link" href="#spot-manyo">万葉公園</a>エリアへ → <a class="spot-link" href="#spot-murosada">流甘味 むろさだ</a> でランチ
               </div>
               <div class="timeline-desc">
                 バス約7分。水路に乗って注文品が流れてくるユニークなスタイル！SNS映え抜群でグループで盛り上がること間違いなし
@@ -627,7 +640,7 @@
             <div class="timeline-item">
               <div class="timeline-time">14:00</div>
               <div class="timeline-title">
-                万葉公園 &amp; 玄関テラスでまったり
+                <a class="spot-link" href="#spot-manyo">万葉公園</a> &amp; 玄関テラスでまったり
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -666,7 +679,7 @@
             </div>
             <div class="timeline-item">
               <div class="timeline-time">10:15</div>
-              <div class="timeline-title">城願寺 参拝</div>
+              <div class="timeline-title"><a class="spot-link" href="#spot-joganji">城願寺</a> 参拝</div>
               <div class="timeline-desc">
                 駅から徒歩10分。800年以上の歴史を持つ古刹。天然記念物のビャクシン（大木）は圧巻
               </div>
@@ -674,7 +687,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:00</div>
               <div class="timeline-title">
-                lunch itta でランチ
+                <a class="spot-link" href="#spot-itta">lunch itta</a> でランチ
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -684,7 +697,7 @@
             <div class="timeline-item">
               <div class="timeline-time">13:00</div>
               <div class="timeline-title">
-                どらやき絃 &amp; 温泉街散策でお土産探し
+                <a class="spot-link" href="#spot-dorayaki">どらやき絃</a> &amp; 温泉街散策でお土産探し
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -727,7 +740,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:15</div>
               <div class="timeline-title">
-                湯河原カフェ で到着コーヒー
+                <a class="spot-link" href="#spot-yugawaracafe">湯河原カフェ</a> で到着コーヒー
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -738,7 +751,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:45</div>
               <div class="timeline-title">
-                どらやき絃 で食べ歩き
+                <a class="spot-link" href="#spot-dorayaki">どらやき絃</a> で食べ歩き
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -748,7 +761,7 @@
             <div class="timeline-item">
               <div class="timeline-time">12:15</div>
               <div class="timeline-title">
-                MUSEUM CAFE and garden で庭園ランチ
+                <a class="spot-link" href="#spot-andgarden">MUSEUM CAFE and garden</a> で庭園ランチ
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -758,7 +771,7 @@
             <div class="timeline-item">
               <div class="timeline-time">13:30</div>
               <div class="timeline-title">
-                万葉公園 &amp; 玄関テラスでまったり
+                <a class="spot-link" href="#spot-manyo">万葉公園</a> &amp; 玄関テラスでまったり
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -768,7 +781,7 @@
             <div class="timeline-item">
               <div class="timeline-time">14:30</div>
               <div class="timeline-title">
-                小梅堂 できびもちお土産
+                <a class="spot-link" href="#spot-koumedo">小梅堂</a> できびもちお土産
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -806,7 +819,7 @@
             <div class="timeline-item">
               <div class="timeline-time">10:15</div>
               <div class="timeline-title">
-                五所神社 参拝
+                <a class="spot-link" href="#spot-gosho">五所神社</a> 参拝
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -816,7 +829,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:00</div>
               <div class="timeline-title">
-                十二庵 で豆腐ブランチ
+                <a class="spot-link" href="#spot-junian">十二庵</a> で豆腐ブランチ
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -826,7 +839,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:45</div>
               <div class="timeline-title">
-                みなとのキッチン で地魚ランチ
+                <a class="spot-link" href="#spot-minato">みなとのキッチン</a> で地魚ランチ
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -836,7 +849,7 @@
             <div class="timeline-item">
               <div class="timeline-time">13:00</div>
               <div class="timeline-title">
-                湯河原カフェ で食後のまったり
+                <a class="spot-link" href="#spot-yugawaracafe">湯河原カフェ</a> で食後のまったり
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -885,7 +898,7 @@
             </div>
             <div class="timeline-item">
               <div class="timeline-time">11:15</div>
-              <div class="timeline-title">飯田商店 で絶品らぁ麺ランチ</div>
+              <div class="timeline-title"><a class="spot-link" href="#spot-iida">飯田商店</a> で絶品らぁ麺ランチ</div>
               <div class="timeline-desc">
                 食べログアワード受賞の全国屈指の名店。化学調味料不使用の澄んだスープは感動もの。※要予約（4/26(日)16:00受付開始・OMAKASEサイト）
               </div>
@@ -893,7 +906,7 @@
             <div class="timeline-item">
               <div class="timeline-time">12:30</div>
               <div class="timeline-title">
-                どらやき絃 で食べ歩きスイーツ
+                <a class="spot-link" href="#spot-dorayaki">どらやき絃</a> で食べ歩きスイーツ
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -914,7 +927,7 @@
             <div class="timeline-item">
               <div class="timeline-time">14:30</div>
               <div class="timeline-title">
-                万葉公園 &amp; 玄関テラスでまったり
+                <a class="spot-link" href="#spot-manyo">万葉公園</a> &amp; 玄関テラスでまったり
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -951,7 +964,7 @@
             <div class="timeline-item">
               <div class="timeline-time">10:15</div>
               <div class="timeline-title">
-                五所神社 参拝
+                <a class="spot-link" href="#spot-gosho">五所神社</a> 参拝
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -961,7 +974,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:00</div>
               <div class="timeline-title">
-                小梅堂 できびもちお土産
+                <a class="spot-link" href="#spot-koumedo">小梅堂</a> できびもちお土産
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -971,7 +984,7 @@
             <div class="timeline-item">
               <div class="timeline-time">11:30</div>
               <div class="timeline-title">
-                みなとのキッチン で地魚ランチ
+                <a class="spot-link" href="#spot-minato">みなとのキッチン</a> で地魚ランチ
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -981,7 +994,7 @@
             <div class="timeline-item">
               <div class="timeline-time">13:00</div>
               <div class="timeline-title">
-                湯河原カフェ で食後のまったり
+                <a class="spot-link" href="#spot-yugawaracafe">湯河原カフェ</a> で食後のまったり
                 <span class="oshi-badge">つかセレクト</span>
               </div>
               <div class="timeline-desc">
@@ -1059,13 +1072,13 @@
             <span class="genre-icon">&#x1F374;</span> グルメ・ランチ
           </div>
           <div class="genre-grid">
-            <div class="genre-card color-gourmet">
+            <div class="genre-card color-gourmet" id="spot-iida">
               <div class="g-name">
                 <a
                   href="https://r.iidashouten.com/"
                   target="_blank"
                   rel="noopener"
-                  >飯田商店</a
+                  >飯田商店</
                 >
               </div>
               <div class="g-sub">ラーメン</div>
@@ -1119,7 +1132,7 @@
                 古民家の全席座敷席で相模湾を望む。麦とろ&amp;黒毛和牛ローストビーフの「ビーとろ」がおすすめ
               </div>
             </div>
-            <div class="genre-card color-gourmet">
+            <div class="genre-card color-gourmet" id="spot-junian">
               <div class="g-name">
                 <a href="https://12an.jp/" target="_blank" rel="noopener"
                   >十二庵</a
@@ -1131,7 +1144,7 @@
                 毎朝手作りの豆腐料理専門店。「できたてとうふ御膳」が人気。ヘルシーで体に優しいランチ
               </div>
             </div>
-            <div class="genre-card color-gourmet">
+            <div class="genre-card color-gourmet" id="spot-itta">
               <div class="g-name">
                 <a
                   href="https://itta.crayonsite.net/"
@@ -1146,7 +1159,7 @@
                 寿司職人が手がける創作料理。5時間煮込んだ炙りチャーシュー丼が名物。桃鉄にも登場した人気店
               </div>
             </div>
-            <div class="genre-card color-gourmet">
+            <div class="genre-card color-gourmet" id="spot-minato">
               <div class="g-name">
                 <a
                   href="https://www.hotpepper.jp/strJ004004272/"
@@ -1170,7 +1183,7 @@
             <span class="genre-icon">&#x2615;</span> カフェ・スイーツ
           </div>
           <div class="genre-grid">
-            <div class="genre-card color-cafe">
+            <div class="genre-card color-cafe" id="spot-murosada">
               <div class="g-name">
                 <a href="https://murosada.com/" target="_blank" rel="noopener"
                   >流甘味 むろさだ</a
@@ -1182,7 +1195,7 @@
                 水路に乗って注文品が流れてくるユニークなスタイル。テラス席ありでグループに最適
               </div>
             </div>
-            <div class="genre-card color-cafe">
+            <div class="genre-card color-cafe" id="spot-tivoli">
               <div class="g-name">
                 <a
                   href="https://www.tivoli-factory.com/"
@@ -1197,7 +1210,7 @@
                 クッキー8種類60分食べ放題！湯河原みかんのジェラートやシュークリームも。菓子作り体験もあり
               </div>
             </div>
-            <div class="genre-card color-cafe">
+            <div class="genre-card color-cafe" id="spot-andgarden">
               <div class="g-name">
                 <a
                   href="https://www.yugawara.or.jp/gourmet/421/"
@@ -1242,7 +1255,7 @@
                 倉庫をリノベした約10席の小さなカフェ。自家製スコーンやあんバターが評判の隠れ家的スポット
               </div>
             </div>
-            <div class="genre-card color-cafe">
+            <div class="genre-card color-cafe" id="spot-yugawaracafe">
               <div class="g-name">
                 <a
                   href="https://www.instagram.com/yugawara_cafe/"
@@ -1257,7 +1270,7 @@
                 駅前すぐの好立地カフェ。コーヒーとパンが楽しめる。Wi-Fi・個室ありで待ち合わせにも便利
               </div>
             </div>
-            <div class="genre-card color-cafe">
+            <div class="genre-card color-cafe" id="spot-dorayaki">
               <div class="g-name">
                 <a
                   href="https://tabelog.com/kanagawa/A1410/A141002/14098371/"
@@ -1281,7 +1294,7 @@
             <span class="genre-icon">&#x1F333;</span> 自然・景勝地
           </div>
           <div class="genre-grid">
-            <div class="genre-card color-nature">
+            <div class="genre-card color-nature" id="spot-manyo">
               <div class="g-name">
                 <a
                   href="https://www.yugawara.or.jp/sightseeing/722/"
@@ -1296,7 +1309,7 @@
                 湯河原を代表する公園。4月下旬は新緑が美しい。玄関テラスのカフェ&amp;足湯、遊歩道で散策を
               </div>
             </div>
-            <div class="genre-card color-nature">
+            <div class="genre-card color-nature" id="spot-fudotaki">
               <div class="g-name">
                 <a
                   href="https://www.yugawara.or.jp/sightseeing/646/"
@@ -1366,7 +1379,7 @@
             パワースポット・寺社
           </div>
           <div class="genre-grid">
-            <div class="genre-card color-power">
+            <div class="genre-card color-power" id="spot-gosho">
               <div class="g-name">
                 <a href="https://goshojinjya.jp/" target="_blank" rel="noopener"
                   >五所神社</a
@@ -1378,7 +1391,7 @@
                 1300年の歴史を誇る湯河原随一のパワースポット。樹齢850年の御神木の楠は圧巻。七福神の像も
               </div>
             </div>
-            <div class="genre-card color-power">
+            <div class="genre-card color-power" id="spot-joganji">
               <div class="g-name">
                 <a
                   href="https://mannen-joganji.jp/"
@@ -1492,7 +1505,7 @@
                 大正時代末期から変わらぬ製法の温泉まんじゅう。「かながわの名産100選」にも選出。湯河原土産の定番
               </div>
             </div>
-            <div class="genre-card color-activity">
+            <div class="genre-card color-activity" id="spot-koumedo">
               <div class="g-name">
                 <a href="https://koumedo.jp/" target="_blank" rel="noopener"
                   >きびもち・羊かん（小梅堂）</a
