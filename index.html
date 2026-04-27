@@ -165,6 +165,21 @@
         background: var(--primary-light);
         color: var(--primary);
       }
+      .pattern-tab.tab-confirmed {
+        border-color: #5a9e6f;
+        background: #f0f7ed;
+        color: #4a8a5a;
+      }
+      .pattern-tab.tab-confirmed.active {
+        border-color: #5a9e6f;
+        background: #d9ecd3;
+        color: #2f6b3f;
+        box-shadow: 0 2px 8px rgba(90, 158, 111, 0.2);
+      }
+      .pattern-tab.tab-confirmed .tab-label,
+      .pattern-tab.tab-confirmed.active .tab-label {
+        color: #4a8a5a;
+      }
       .pattern-tab .tab-label {
         display: block;
         font-size: 0.75rem;
@@ -272,6 +287,31 @@
       }
       .timeline-item.hotel::before {
         background: var(--primary);
+      }
+      .timeline-item.tbd {
+        border-left-color: #c9a96a;
+        border-left-style: dashed;
+        background: #fdfaf2;
+        opacity: 0.85;
+      }
+      .timeline-item.tbd::before {
+        background: #c9a96a;
+      }
+      .timeline-item.tbd .timeline-time {
+        color: #a08850;
+        font-style: italic;
+      }
+      .tbd-tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        background: #c9a96a;
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 10px;
+        margin-left: 6px;
+        vertical-align: middle;
+        letter-spacing: 0.03em;
       }
       .timeline-time {
         font-size: 0.8rem;
@@ -589,7 +629,14 @@
 
       <!-- パターン選択 -->
       <nav class="pattern-tabs">
-        <div class="pattern-tab active" onclick="showPattern('a')">
+        <div
+          class="pattern-tab tab-confirmed active"
+          onclick="showPattern('confirmed')"
+        >
+          ✓ 確定旅程
+          <span class="tab-label">決まったことから順に更新中</span>
+        </div>
+        <div class="pattern-tab" onclick="showPattern('a')">
           A. 王道まったり
           <span class="tab-label">万葉公園 &amp; カフェ中心</span>
         </div>
@@ -603,8 +650,114 @@
         </div>
       </nav>
 
+      <!-- 確定旅程 -->
+      <div id="pattern-confirmed" class="pattern-content active">
+        <div class="pattern-header">
+          <h2>✓ 確定旅程</h2>
+          <p class="pattern-desc">
+            メンバーで決まったことから順次更新していきます！「検討中」の項目はみんなで相談しながら埋めていきましょう。
+          </p>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 1</span>
+            <span class="day-date">4月29日（水・祝）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">11:00</div>
+              <div class="timeline-title">JR湯河原駅 集合</div>
+              <div class="timeline-desc">改札を出たら全員集合！</div>
+            </div>
+            <div class="timeline-item tbd">
+              <div class="timeline-time">未定</div>
+              <div class="timeline-title">
+                ランチ <span class="tbd-tag">検討中</span>
+              </div>
+              <div class="timeline-desc">
+                候補：麦とろ童子 / lunch itta / サルーテ など
+              </div>
+            </div>
+            <div class="timeline-item tbd">
+              <div class="timeline-time">未定</div>
+              <div class="timeline-title">
+                午後の予定 <span class="tbd-tag">検討中</span>
+              </div>
+              <div class="timeline-desc">
+                万葉公園・MUSEUM CAFE・スイーツファクトリーなど
+              </div>
+            </div>
+            <div class="timeline-item hotel">
+              <div class="timeline-time">15:00頃</div>
+              <div class="timeline-title">
+                ニューウェルシティ湯河原 チェックイン
+              </div>
+              <div class="timeline-desc">
+                無料シャトルバスで宿へ。大浴場で温泉を満喫
+              </div>
+            </div>
+            <div class="timeline-item hotel">
+              <div class="timeline-time">18:00</div>
+              <div class="timeline-title">夕食（宿）</div>
+              <div class="timeline-desc">
+                宿でゆったり夕食 → 部屋で女子トーク！
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-section">
+          <div class="day-header">
+            <span class="day-badge">DAY 2</span>
+            <span class="day-date">4月30日（木）</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item hotel">
+              <div class="timeline-time">7:30 - 9:30</div>
+              <div class="timeline-title">朝食 &amp; 朝風呂</div>
+              <div class="timeline-desc">宿で朝食。時間があれば朝風呂も</div>
+            </div>
+            <div class="timeline-item hotel">
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-title">チェックアウト</div>
+              <div class="timeline-desc">バスで湯河原駅方面へ</div>
+            </div>
+            <div class="timeline-item tbd">
+              <div class="timeline-time">未定</div>
+              <div class="timeline-title">
+                午前の予定 <span class="tbd-tag">検討中</span>
+              </div>
+              <div class="timeline-desc">五所神社 / 城願寺 / 散策など</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:30頃</div>
+              <div class="timeline-title">
+                <a class="spot-link" href="#spot-junian">十二庵</a> で豆腐ランチ
+                <span class="oshi-badge">つかセレクト</span>
+              </div>
+              <div class="timeline-desc">
+                毎朝手作りの豆腐料理専門店。「できたてとうふ御膳」が人気
+              </div>
+            </div>
+            <div class="timeline-item tbd">
+              <div class="timeline-time">未定</div>
+              <div class="timeline-title">
+                午後の予定 <span class="tbd-tag">検討中</span>
+              </div>
+              <div class="timeline-desc">お土産散策・カフェなど</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:00頃</div>
+              <div class="timeline-title">湯河原駅 → 帰路</div>
+              <div class="timeline-desc">お疲れさまでした！</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- パターンA -->
-      <div id="pattern-a" class="pattern-content active">
+      <div id="pattern-a" class="pattern-content">
         <div class="pattern-header">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Todoroki_Keikoku_02.JPG"
